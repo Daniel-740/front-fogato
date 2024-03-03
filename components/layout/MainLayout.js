@@ -1,10 +1,12 @@
+import { SideBar } from './Sidebar';
+import Link from 'next/link';
 export const MainLayout = ({ children }) => {
 	return (
-          <html lang="en">
-			<header>
-				<p>this is a header</p>
-			</header>
-			<body>{children}</body>
-		</html>
+		<div className='md:flex min-h-screen'>
+               <SideBar />
+               <main className='md:w-3/5 xl:w-4/5'>
+                    {children}
+               </main>
+		</div>
 	);
 };
