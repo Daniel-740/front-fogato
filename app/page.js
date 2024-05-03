@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { LoginLayout } from "@/components/layout/LoginLayout";
 
 export default function Home() {
