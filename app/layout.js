@@ -1,15 +1,22 @@
+"use client"
 import './globals.css';
+import firebase, { FirebaseContext } from '../services/firebase';
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
+		<html lang="es">
 			<head>
-				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width" />
 
 				<title>Fogato App</title>
 			</head>
-			<body>{children}</body>
+			<body>
+				{
+					<FirebaseContext.Provider value={{ firebase }}>
+						{children}
+					</FirebaseContext.Provider>
+				}
+			</body>
 		</html>
 	);
 }

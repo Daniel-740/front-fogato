@@ -2,9 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import ListIcon from '../../public/images/list.svg';
-import MenuIcon from '../../public/images/menu.svg';
 import styles from '../../styles/components/layout/sidebar.module.css';
+
 
 export const SideBar = () => {
 	const pathname = usePathname();
@@ -26,20 +25,24 @@ export const SideBar = () => {
 					<Link
 						href={'/orders'}
 						className={`link px-1 py-2 flex items-center text-xl mt-2 text-gray-800 hover:bg-[#e65654] hover:text-white ${pathname === '/orders' ? styles.active : ''}`}>
-						<ListIcon
+						<Image
+							src={'images/list.svg'}
 							height={20}
 							width={20}
 							className="mr-3 mt-1"
+							alt='list-icon'
 						/>
 						Orders
 					</Link>
 					<Link
 						href={'/menu'}
 						className={`link px-1 py-2 flex items-center text-xl mt-2 text-gray-800 hover:bg-[#e65654] hover:text-white ${pathname === '/menu' ? styles.active : ''}`}>
-						<MenuIcon
+						<Image
+							src={'images/menu.svg'}
 							height={20}
 							width={20}
 							className="mr-3 mt-1"
+							alt='menu-icon'
 						/>
 						Menu
 					</Link>
